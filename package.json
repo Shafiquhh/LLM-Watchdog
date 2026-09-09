@@ -1,10 +1,19 @@
 {
   "name": "llm-watchdog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lightweight, non-blocking telemetry SDK for LLM API dependency and output monitoring",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "homepage": "https://llm-watchdog-web.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shafiquhh/LLM-Watchdog.git",
+    "directory": "packages/sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/Shafiquhh/LLM-Watchdog/issues"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -25,13 +34,14 @@
     "llm",
     "monitoring",
     "openai",
+    "gemini",
     "anthropic",
     "telemetry",
     "observability",
     "p95",
     "latency"
   ],
-  "author": "",
+  "author": "Shafiq",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.6.3",
