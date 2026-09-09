@@ -8,8 +8,7 @@
   "homepage": "https://llm-watchdog-web.vercel.app",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shafiquhh/LLM-Watchdog.git",
-    "directory": "packages/sdk"
+    "url": "git+https://github.com/Shafiquhh/LLM-Watchdog.git"
   },
   "bugs": {
     "url": "https://github.com/Shafiquhh/LLM-Watchdog/issues"
@@ -28,7 +27,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "clean": "rimraf dist"
+    "test": "tsx test/sdk.test.ts",
+    "prepublishOnly": "tsc"
   },
   "keywords": [
     "llm",
@@ -45,6 +45,12 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.6.3",
-    "@types/node": "^20.17.0"
+    "@types/node": "^20.17.0",
+    "tsx": "^4.23.13"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
