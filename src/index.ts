@@ -2,12 +2,14 @@ export * from './types';
 export * from './token-costs';
 export * from './wrappers/openai';
 export * from './wrappers/anthropic';
+export * from './wrappers/gemini';
 export * from './wrappers/generic';
 
 import { MonitorClientConfig, TelemetryTraceInput } from './types';
 import { TelemetryQueue } from './queue';
 import { wrapOpenAI } from './wrappers/openai';
 import { wrapAnthropic } from './wrappers/anthropic';
+import { wrapGemini } from './wrappers/gemini';
 import { traceExecution, TraceOptions } from './wrappers/generic';
 
 export class MonitorClient {
@@ -56,6 +58,13 @@ export class MonitorClient {
    */
   public wrapAnthropic<T extends Record<string, any>>(client: T): T {
     return wrapAnthropic(client, this);
+  }
+
+  /**
+   * Wrap a Google Gemini client (or GenerativeModel) with transparent latency, token, and error monitoring.
+   */
+  public wrapGemini<T extends Record<string, any>>(clientOrModel: T): T {
+    return wrapGemini(clientOrModel, this);
   }
 
   /**
