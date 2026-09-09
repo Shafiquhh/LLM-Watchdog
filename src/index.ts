@@ -19,7 +19,9 @@ export class MonitorClient {
   constructor(config: MonitorClientConfig) {
     this.config = {
       apiKey: config.apiKey,
-      endpoint: config.endpoint || 'http://localhost:3000/api/v1/ingest',
+      endpoint: config.endpoint
+        ? (config.endpoint.endsWith('/api/v1/ingest') ? config.endpoint : `${config.endpoint.replace(/\/$/, '')}/api/v1/ingest`)
+        : 'http://localhost:3000/api/v1/ingest',
       maxBatchSize: config.maxBatchSize ?? 25,
       flushIntervalMs: config.flushIntervalMs ?? 1500,
       disabled: config.disabled ?? false,
