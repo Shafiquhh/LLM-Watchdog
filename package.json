@@ -1,6 +1,6 @@
 {
   "name": "llm-watchdog",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Lightweight, non-blocking telemetry SDK for LLM API dependency and output monitoring",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
