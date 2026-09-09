@@ -12,6 +12,10 @@ export const MODEL_PRICING: Record<string, { prompt: number; completion: number 
   'claude-3-5-haiku-20241022': { prompt: 0.001, completion: 0.005 },
   'claude-3-opus-20240229': { prompt: 0.015, completion: 0.075 },
   // Google Gemini
+  'gemini-3.6-flash': { prompt: 0.000075, completion: 0.0003 },
+  'gemini-2.5-flash': { prompt: 0.000075, completion: 0.0003 },
+  'gemini-2.5-pro': { prompt: 0.00125, completion: 0.005 },
+  'gemini-flash-latest': { prompt: 0.000075, completion: 0.0003 },
   'gemini-1.5-pro': { prompt: 0.00125, completion: 0.005 },
   'gemini-1.5-flash': { prompt: 0.000075, completion: 0.0003 },
   // Groq / Meta Llama
